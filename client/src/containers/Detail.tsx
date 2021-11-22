@@ -4,5 +4,13 @@ export interface IDetailProps {}
 
 export default function Detail(props: IDetailProps) {
   const { id } = useParams();
-  return <section>id:{id}</section>;
+
+  return (
+    <div>
+      <section>
+        <div>id:{id}</div>
+        <div></div>
+      </section>
+    </div>
+  );
 }

@@ -21,9 +21,7 @@ function useFetch(path: string, body: any = null, method: string = 'GET') {
 
       const { data: responseData } = response;
 
-      setTimeout(() => {
-        responseData && setData(responseData);
-      }, 2000);
+      responseData && setData(responseData);
     } catch (error: any) {
       setError(error.message);
     } finally {
