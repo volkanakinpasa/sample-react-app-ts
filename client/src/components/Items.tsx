@@ -1,11 +1,12 @@
 import IItem from '../interfaces/IItem';
+import IdValue from '../types/IdValue';
 import { Item } from './Item';
 
-interface IItemsProps {
-  items: IItem[];
+interface IItemsProps<T extends IdValue> {
+  items: IItem<T>[];
 }
 
-export function Items(props: IItemsProps) {
+export function Items<T extends IdValue>(props: IItemsProps<T>) {
   const { items } = props;
 
   return (

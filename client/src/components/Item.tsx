@@ -1,7 +1,12 @@
-import { IItemProps } from '../interfaces/IItemProps';
+import IItem from '../interfaces/IItem';
+import IdValue from '../types/IdValue';
 import { Link } from 'react-router-dom';
 
-export function Item(props: IItemProps) {
+interface IItemProps<T extends IdValue> {
+  item: IItem<T>;
+}
+
+export function Item<T extends IdValue>(props: IItemProps<T>) {
   const { item } = props;
 
   return (

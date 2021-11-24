@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import IItem from '../interfaces/IItem';
+import IdValue from '../types/IdValue';
 import { Items } from '../components/Items';
 import useFetch from '../hooks/useFetch';
 
-export default function Listing() {
-  const [items, setItems] = useState<IItem[]>();
+export default function Listing<T extends IdValue>() {
+  const [items, setItems] = useState<IItem<T>[]>();
   const { data, loading, error } = useFetch('/search', {
     page: 1,
     per_page: 3,

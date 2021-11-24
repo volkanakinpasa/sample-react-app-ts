@@ -1,3 +1,14 @@
 .homeH1 {
   background-color: beige;
 }
+
+dl {
+  padding: 10px;
+}
+dl dt {
+  float: left;
+  padding: 5px;
+}
+dl dd {
+  padding: 5px;
+}
