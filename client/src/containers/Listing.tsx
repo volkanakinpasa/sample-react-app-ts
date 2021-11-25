@@ -10,16 +10,11 @@ import usePostFetch from '../hooks/usePostFetch';
 export default function Listing<T extends IdValue>() {
   const [items, setItems] = useState<IItem<T>[]>();
   const [formInputs, setFormInputs] = useState<any>(null);
-  const [forceFetch, setForceFetch] = useState<boolean>(false);
 
-  const { data } = useGetFetch(
-    '/items',
-    {
-      page: 1,
-      per_page: 100,
-    },
-    forceFetch
-  );
+  const { data, setForceFetch } = useGetFetch('/items', {
+    page: 1,
+    per_page: 100,
+  });
 
   const { postData } = usePostFetch(formInputs);
 
