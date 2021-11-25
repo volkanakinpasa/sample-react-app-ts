@@ -10,8 +10,8 @@ export function Item<T extends IdValue>(props: IItemProps<T>) {
   const { item } = props;
 
   return (
-    <li>
-      <Link to={item.id.toString()}>{item.name}</Link>
-    </li>
+    <Link to={item.id.toString()}>
+      {item.id} - {item.name}
+    </Link>
   );
 }

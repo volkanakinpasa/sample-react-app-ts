@@ -4,10 +4,11 @@ import { Item } from './Item';
 
 interface IItemsProps<T extends IdValue> {
   items: IItem<T>[];
+  onDelete: (item: IItem<T>) => void;
 }
 
 export function Items<T extends IdValue>(props: IItemsProps<T>) {
-  const { items } = props;
+  const { items, onDelete } = props;
 
   return (
     <>
@@ -16,7 +17,10 @@ export function Items<T extends IdValue>(props: IItemsProps<T>) {
         {items && items.length > 0 && (
           <ul>
             {items.map((item) => (
-              <Item key={item.id} item={item} />
+              <li key={item.id}>
+                <Item item={item} /> -
+                <button onClick={() => onDelete(item)}>Delete</button>
+              </li>
             ))}
           </ul>
         )}
